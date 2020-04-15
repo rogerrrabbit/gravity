@@ -3,8 +3,12 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="data"/>
 	<classpathentry kind="src" path="lib"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="C:/Users/Vincent/workspace/gravity_2/lib/jinput.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Vincent/workspace/gravity_2/lib/mp3plugin.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/jinput.jar"/>
+	<classpathentry kind="lib" path="lib/mp3plugin.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
