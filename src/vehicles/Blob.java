@@ -38,7 +38,7 @@ public class Blob extends Vessel {
 
 	private void updateThrottleValues(int x, int y) {
 		if (Math.abs(getThrottleX())+Math.abs(getThrottleY()) < blobMaxThrottle) {
-		/* augmentation linéaire */
+		/* augmentation linï¿½aire */
 			throttleX(blobThrottleStep*x);
 			throttleY(blobThrottleStep*y);
 		}

@@ -16,6 +16,7 @@ import java.awt.Shape;
 import java.awt.Stroke;
 import java.awt.image.BufferedImage;
 import java.awt.image.ImageObserver;
+import java.lang.reflect.InvocationTargetException;
 
 public class GameSelector extends VisibleObject implements ImageObserver {
 
@@ -62,11 +63,23 @@ public class GameSelector extends VisibleObject implements ImageObserver {
 		
 		public Game instance() {
 			try {
-				return (Game)gameClass.newInstance();
+				return (Game)gameClass.getDeclaredConstructor().newInstance();
 			} catch (InstantiationException e) {
 				e.printStackTrace();
 				return null;
 			} catch (IllegalAccessException e) {
+				e.printStackTrace();
+				return null;
+			} catch (IllegalArgumentException e) {
+				e.printStackTrace();
+				return null;
+			} catch (InvocationTargetException e) {
+				e.printStackTrace();
+				return null;
+			} catch (NoSuchMethodException e) {
+				e.printStackTrace();
+				return null;
+			} catch (SecurityException e) {
 				e.printStackTrace();
 				return null;
 			}

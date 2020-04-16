@@ -13,6 +13,7 @@ import java.awt.Shape;
 import java.awt.Stroke;
 import java.awt.image.BufferedImage;
 import java.awt.image.ImageObserver;
+import java.lang.reflect.InvocationTargetException;
 
 import objects.BlackHole;
 import objects.Satellite;
@@ -59,11 +60,23 @@ public class VesselSelector extends VisibleObject implements ImageObserver {
 		
 		public Mass instance() {
 			try {
-				return (Mass)selectableClass.newInstance();
+				return (Mass)selectableClass.getDeclaredConstructor().newInstance();
 			} catch (InstantiationException e) {
 				e.printStackTrace();
 				return null;
 			} catch (IllegalAccessException e) {
+				e.printStackTrace();
+				return null;
+			} catch (IllegalArgumentException e) {
+				e.printStackTrace();
+				return null;
+			} catch (InvocationTargetException e) {
+				e.printStackTrace();
+				return null;
+			} catch (NoSuchMethodException e) {
+				e.printStackTrace();
+				return null;
+			} catch (SecurityException e) {
 				e.printStackTrace();
 				return null;
 			}

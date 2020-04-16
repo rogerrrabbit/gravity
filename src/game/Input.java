@@ -147,8 +147,6 @@ public class Input implements Runnable {
             System.out.println("Player " + (i+1) +" controller: " + listOfGamepads[i].getName());
         }
         
-        System.exit(0);
-        
         while(true) {
             /* gamepads */
             for (int gamepadIndex=0; gamepadIndex < gamepadFound; gamepadIndex++) {
